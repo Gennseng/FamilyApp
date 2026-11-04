@@ -26,7 +26,7 @@ export default function MealList () {
                 <div>
                     {meals.map((meal) => (
                         <>
-                            <Meal key={meal._id} meal={meal} />
+                            <Meal key={meal.meal_id} meal={meal} />
                         </>
                     ))}
                 </div>

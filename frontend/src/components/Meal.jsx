@@ -1,9 +1,13 @@
+import { Link } from "react-router"
+
 export default function Meal(meal) {
-    console.log(meal)
     return(
         <div>
-            <h3>{ meal.meal.name }</h3>
-            <p>{ meal.meal.meat_type }</p>
+            <Link to={`/meal/${meal.meal.meal_id}`}>
+                <h3>{ meal.meal.name }</h3>
+                <p>{ meal.meal.meat_type }</p>
+            </Link>
+            
         </div>
     )
 }
