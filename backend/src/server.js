@@ -2,6 +2,7 @@ import express from "express"
 import cors from "cors"
 import dotenv from "dotenv"
 import mealsRoutes from "./routes/mealsRoutes.js"
+import planRoutes from "./routes/planRoutes.js"
 
 dotenv.config()
 
@@ -13,6 +14,7 @@ const port = process.env.PORT || 5001
 app.use(cors())
 app.use(express.json())
 app.use("/dinners", mealsRoutes)
+app.use("/plan", planRoutes)
 
 
 app.listen(port, ()=> {
