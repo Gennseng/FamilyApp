@@ -14,11 +14,11 @@ export default function MealCreate () {
             return
         }
         try {
-            await api.post("/", {
+            await api.post("/dinners", {
                 name,
                 meat_type
             })
-            navigate("/")
+            navigate("/dinners")
         } catch(error) {
             console.log(error)
         }
@@ -26,7 +26,7 @@ export default function MealCreate () {
 
     return(
         <>
-            <Link to={"/"}> Go Back </Link>
+            <Link to={"/dinners"}> Go Back </Link>
             <h2>Add New Meal</h2>
             <form onSubmit={handleSubmit}>
                 <label>

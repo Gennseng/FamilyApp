@@ -7,9 +7,9 @@ export default function App () {
   return(
     <>
         <Routes>
-            <Route path="/" element={<MealList />} />
-            <Route path="/create" element={<MealCreate />} />
-            <Route path="/meal/:id" element={<MealUpdate />} />
+            <Route path="/dinners" element={<MealList />} />
+            <Route path="/dinners/create" element={<MealCreate />} />
+            <Route path="/dinners/:id" element={<MealUpdate />} />
 
         </Routes>
     </>

@@ -9,7 +9,7 @@ export default function MealList () {
     useEffect(()=>{
         async function fetchMeals() {
             try {
-                const res = await api.get("/")
+                const res = await api.get("/dinners")
                 setMeals(res.data)
             } catch (error) {
                 console.log("Error fetching meals", error)

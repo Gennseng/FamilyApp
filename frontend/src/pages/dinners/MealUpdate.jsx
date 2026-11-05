@@ -12,7 +12,7 @@ export default function MealUpdate () {
     useEffect(() => {
         async function getMeal() {
             try {
-                const res = await api.get(`/${id}`)
+                const res = await api.get(`/dinners/${id}`)
                 setMeal(res.data[0])
             } catch (error) {
                 console.log("Error getting meal, ",error)
@@ -26,8 +26,8 @@ export default function MealUpdate () {
     async function handleDelete() {
         if(!window.confirm("Delete this meal?")) return
         try {
-            await api.delete(`/${id}`)
-            navigate("/")
+            await api.delete(`/dinners/${id}`)
+            navigate("/dinners")
         } catch(error) {
             console.log(error)
         }
@@ -38,8 +38,8 @@ export default function MealUpdate () {
             return
         }
         try {
-            await api.put(`/${id}`, meal)
-            navigate("/")
+            await api.put(`/dinners/${id}`, meal)
+            navigate("/dinners")
         } catch(error) {
             console.log(error)
         }
@@ -53,7 +53,7 @@ export default function MealUpdate () {
     }
     return (
         <>
-            <Link to={"/"}> Go Back </Link>
+            <Link to={"/dinners"}> Go Back </Link>
             <button onClick={handleDelete}>Delete</button>
             <h2>Update Meal</h2>
             <label>

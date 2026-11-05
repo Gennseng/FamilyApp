@@ -6,3 +6,7 @@ CREATE TABLE meals(
     meat_type VARCHAR(255) NOT NULL,
     last_had DATE
 );
+
+CREATE TABLE meal_plan(
+    meal_id INT REFERENCES meals(meal_id)
+);

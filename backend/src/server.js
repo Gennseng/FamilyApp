@@ -12,7 +12,7 @@ const port = process.env.PORT || 5001
 
 app.use(cors())
 app.use(express.json())
-app.use("/meals", mealsRoutes)
+app.use("/dinners", mealsRoutes)
 
 
 app.listen(port, ()=> {
