@@ -4,6 +4,7 @@ export default function Navbar() {
     return(
         <>
             <Link to={"/dinners"}>Dinners</Link>
+            <Link to={"/dinnerplan"}>Dinner Plan</Link>
         </>
     )
 }

@@ -63,7 +63,7 @@ export async function deleteMeal (req,res) {
 // GET meal plan
 export async function getMealPlan (req, res) {
     try {
-        const meals = await pool.query('SELECT * FROM meal_plan')
+        const meals = await pool.query('SELECT * FROM meals, meal_plan WHERE meals.meal_id = meal_plan.meal_id')
         res.status(200).json(meals.rows)
     } catch (error) {
         console.log("Error getting meals, ", error)
