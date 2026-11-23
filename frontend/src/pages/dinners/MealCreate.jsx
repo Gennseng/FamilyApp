@@ -5,6 +5,8 @@ import { Link, useNavigate } from "react-router"
 export default function MealCreate () {
     const [name, setName] = useState("")
     const [meat_type, setMeatType] = useState("")
+    const [book, setBook] = useState("")
+    const [page, setPage] = useState(0)
 
     const navigate = useNavigate()
 
@@ -16,7 +18,9 @@ export default function MealCreate () {
         try {
             await api.post("/dinners", {
                 name,
-                meat_type
+                meat_type,
+                book,
+                page
             })
             navigate("/dinners")
         } catch(error) {
@@ -44,6 +48,22 @@ export default function MealCreate () {
                 placeholder="Meat type"
                 value={meat_type}
                 onChange={(e)=> setMeatType(e.target.value)}
+                />
+                <label>
+                    <span>Book</span>
+                </label>
+                <input type="text"
+                placeholder="Book"
+                value={book}
+                onChange={(e)=> setBook(e.target.value)}
+                />
+                <label>
+                    <span>Page</span>
+                </label>
+                <input type="number"
+                placeholder="Page"
+                value={page}
+                onChange={(e)=> setPage(e.target.value)}
                 />
                 <button type="submit">Add Meal</button>
             </form>

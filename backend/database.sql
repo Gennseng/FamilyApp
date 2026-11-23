@@ -4,6 +4,8 @@ CREATE TABLE meals(
     meal_id SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     meat_type VARCHAR(255) NOT NULL,
+    book VARCHAR(255) NOT NULL,
+    page INT,
     last_had DATE
 );
 

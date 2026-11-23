@@ -72,6 +72,22 @@ export default function MealUpdate () {
             value={meal.meat_type}
             onChange={(e)=> setMeal({ ...meal, meat_type: e.target.value })}
             />
+            <label>
+                <span>Book</span>
+            </label>
+            <input type="text"
+            placeholder="Book"
+            value={meal.book}
+            onChange={(e)=> setMeal({ ...meal, book: e.target.value })}
+            />
+            <label>
+                <span>Page</span>
+            </label>
+            <input type="number"
+            placeholder="Page"
+            value={meal.page}
+            onChange={(e)=> setMeal({ ...meal, page: e.target.value })}
+            />
             <button onClick={handleSave}>Save Changes</button>
 
         </>

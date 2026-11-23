@@ -6,6 +6,7 @@ export default function Meal(meal) {
             <Link to={`/dinners/${meal.meal.meal_id}`}>
                 <h3>{ meal.meal.name }</h3>
                 <p>{ meal.meal.meat_type }</p>
+                { meal.meal.book && meal.meal.page && <p>{ meal.meal.book } p.{ meal.meal.page }</p>}
             </Link>
             
         </div>

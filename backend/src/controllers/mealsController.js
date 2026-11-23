@@ -26,8 +26,8 @@ export async function getMeal (req,res) {
 // POST - Create
 export async function createMeal (req, res) {
     try {
-        const {name, meat_type} = req.body
-        const newMeal = await pool.query('INSERT INTO meals(name, meat_type) VALUES($1, $2) RETURNING *', [name, meat_type])
+        const {name, meat_type, book, page} = req.body
+        const newMeal = await pool.query('INSERT INTO meals(name, meat_type, book, page) VALUES($1, $2, $3, $4) RETURNING *', [name, meat_type, book, page])
         res.status(201).json(newMeal.rows[0])
     } catch (error) {
         console.log("Error creating meal, ", error)
@@ -38,8 +38,8 @@ export async function createMeal (req, res) {
 // PUT - Update
 export async function updateMeal (req,res) {
     try {
-        const {name, meat_type} = req.body
-        const updatedMeal = await pool.query('UPDATE meals SET name = $1, meat_type = $2 WHERE meal_id = $3 RETURNING *', [name, meat_type, req.params.id])
+        const {name, meat_type, book, page} = req.body
+        const updatedMeal = await pool.query('UPDATE meals SET name = $1, meat_type = $2, book = $3, page = $4 WHERE meal_id = $5 RETURNING *', [name, meat_type, book, page, req.params.id])
         if (!updatedMeal) return res.status(404).json({ message: "No meal found!" })
         res.status(200).json(updatedMeal.rows[0])
     } catch(error) {
